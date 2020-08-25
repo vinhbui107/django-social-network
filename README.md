@@ -28,8 +28,8 @@ Make sure Python 3.8.x, Pip and Virtualenv are already installed. [See here for 
 Clone and move to project
 
 ```
-$ git clone https://github.com/vinhbui107/MovieCenter.git
-$ cd MovieCenter
+$ git clone https://github.com/vinhbui107/django-social-network.git
+$ cd django-social-network
 ```
 
 Create virtual environment
