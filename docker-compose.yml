@@ -2,12 +2,15 @@ version: "3"
 
 services:
   db:
-    image: postgres
+    image: postgres:12.4-alpine
     environment:
       - POSTGRES_DB=social-network
       - POSTGRES_USER=vinh
       - POSTGRES_PASSWORD=1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
   web:
+    restart: always
     build: .
     command: python ./manage.py runserver 0.0.0.0:8000
     volumes:
@@ -16,3 +19,6 @@ services:
       - "8000:8000"
     depends_on:
       - db
+
+volumes:
+  postgres_data:
