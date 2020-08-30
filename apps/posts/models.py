@@ -10,8 +10,11 @@ class Post(models.Model):
     photo = models.ImageField(upload_to="post_images/", blank=True)
     slug = models.SlugField(default="", unique=True)
     is_hidden = models.BooleanField(default=False)
-    created_date = models.DateTimeField(default=timezone.now)
-    updated_date = models.DateTimeField(default=timezone.now)
+    created_date = models.DateTimeField()
+    updated_date = models.DateTimeField()
+    likes = models.ManyToManyField(
+        CustomUser, related_name="like_users", blank=True, symmetrical=False,
+    )
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -22,15 +25,6 @@ class Post(models.Model):
         return super(Post, self).save(*args, **kwargs)
 
 
-class Like(models.Model):
-    user_id = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name="user_liked"
-    )
-    post_id = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name="post_user_liked"
-    )
-
-
 class Comment(models.Model):
     post_id = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="post_commented"
@@ -39,8 +33,8 @@ class Comment(models.Model):
         CustomUser, on_delete=models.CASCADE, related_name="user_commented"
     )
     content = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    updated_date = models.DateTimeField(default=timezone.now)
+    created_date = models.DateTimeField()
+    updated_date = models.DateTimeField()
 
     def save(self, *args, **kwargs):
         if not self.pk:
@@ -58,8 +52,8 @@ class Reply(models.Model):
         CustomUser, on_delete=models.CASCADE, related_name="user_replied"
     )
     content = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    updated_date = models.DateTimeField(default=timezone.now)
+    created_date = models.DateTimeField()
+    updated_date = models.DateTimeField()
 
     def save(self, *args, **kwargs):
         if not self.pk:
