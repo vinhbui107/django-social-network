@@ -1,5 +1,5 @@
 # Django Social Network
-
+DJANGO + INSTAGRAM = DJANGRAM :)
 
 ## Features
 
