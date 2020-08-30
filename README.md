@@ -1,5 +1,4 @@
-# DJANGO + INSTAGRAM => DJANGRAM 🙂
-
+## Django + Istagram => Djangram 🙂
 
 ## Features
 
