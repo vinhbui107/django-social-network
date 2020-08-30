@@ -42,17 +42,16 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     phone = models.CharField(max_length=16, blank=True)
-    photo = models.ImageField(upload_to="user_images/", blank=True)
-    google_id = models.CharField(max_length=100, blank=True, null=True)
+    photo = models.ImageField(
+        upload_to="user_images/", default="user_images/default.jpeg"
+    )
+    following = models.ManyToManyField(
+        "self", related_name="following_users", blank=True, symmetrical=False,
+    )
+
+    followers = models.ManyToManyField(
+        "self", related_name="follower_users", blank=True, symmetrical=False,
+    )
 
     def __str__(self):
         return self.email
-
-
-class Follow(models.Model):
-    follower_id = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name="user_follower"
-    )
-    following_id = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE, related_name="user_following"
-    )
