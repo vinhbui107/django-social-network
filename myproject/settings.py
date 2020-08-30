@@ -9,9 +9,9 @@ from decouple import Csv, config
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# ==============================================================================
+# =============================================================================
 # CORE SETTINGS
-# ==============================================================================
+# =============================================================================
 
 SECRET_KEY = config("SECRET_KEY", default=string.ascii_letters)
 
@@ -74,9 +74,9 @@ DATABASES = {
 }
 
 
-# ==============================================================================
+# =============================================================================
 # MIDDLEWARE SETTINGS
-# ==============================================================================
+# =============================================================================
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -87,13 +87,12 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 
-# ==============================================================================
+# =============================================================================
 # TEMPLATES SETTINGS
-# ==============================================================================
+# =============================================================================
 
 TEMPLATES = [
     {
@@ -112,9 +111,9 @@ TEMPLATES = [
 ]
 
 
-# ==============================================================================
+# =============================================================================
 # AUTHENTICATION AND AUTHORIZATION SETTINGS
-# ==============================================================================
+# =============================================================================
 
 AUTH_USER_MODEL = "users.CustomUser"
 
@@ -141,9 +140,9 @@ AUTHENTICATION_BACKENDS = (
 
 LOGIN_REDIRECT_URL = "home"
 
-LOGIN_URL = "account_login"
+LOGIN_URL = "users:login"
 
-ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "users:login"
 
 ACCOUNT_SESSION_REMEMBER = True
 
@@ -162,9 +161,9 @@ ACCOUNT_UNIQUE_EMAIL = True
 # SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 
 
-# ==============================================================================
+# =============================================================================
 # INTERNATIONALIZATION AND LOCALIZATION SETTINGS
-# ==============================================================================
+# =============================================================================
 
 LANGUAGE_CODE = config("LANGUAGE_CODE", default="en")
 
@@ -179,9 +178,9 @@ USE_TZ = True
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale/"),)
 
 
-# ==============================================================================
+# =============================================================================
 # EMAIL SETTINGS
-# ==============================================================================
+# =============================================================================
 
 # EMAIL_SUBJECT_PREFIX = config("DEFAULT_FROM_EMAIL", default="[Django Bat]")
 
@@ -209,16 +208,13 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale/"),)
 # ==============================================================================
 
 STATIC_URL = "/static/"
-
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "/static"),
+]
 
 MEDIA_URL = "/media/"
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # ==============================================================================
 # CACHE SETTINGS
 # ==============================================================================
