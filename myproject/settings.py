@@ -138,9 +138,11 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "core:home"
 
 LOGIN_URL = "users:login"
+
+LOGOUT_REDIRECT_URL = "core:home"
 
 ACCOUNT_LOGOUT_REDIRECT_URL = "users:login"
 
@@ -203,25 +205,27 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale/"),)
 # EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
 
 
-# ==============================================================================
+# =============================================================================
 # STATIC & MEDIA FILES SETTINGS
-# ==============================================================================
+# =============================================================================
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "/static"),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-# ==============================================================================
+# =============================================================================
 # CACHE SETTINGS
-# ==============================================================================
+# =============================================================================
 
 
-# ==============================================================================
+# =============================================================================
 # THIRD-PARTY APPS SETTINGS
-# ==============================================================================
+# =============================================================================
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
