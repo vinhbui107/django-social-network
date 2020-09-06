@@ -1,7 +1,9 @@
 {% autoescape off %}
-Hi {{ user.username }},
+Hi {{ user.username }}, welcome to Django Social Network!
 
 Please click on the link below to confirm your registration:
 
-http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+http://{{ domain }}{% url 'users:activate' uidb64=uid token=token %}
+
+Sincerely, Djangram Team.
 {% endautoescape %}

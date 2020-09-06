@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 {% block cssblock %}
-  <link rel="stylesheet" href="{% static 'css/registration/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/users/login.css' %}">
 {% endblock cssblock %}
 
 {% block title %}
@@ -34,7 +34,7 @@
     </p>
 
     <div class="login-form">
-      <form action="{% url 'login' %}" method="post">
+      <form action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
         <input type="text" name="username" id="id_username" placeholder="Your usernam or email" autofocus autocomplete="off" required>
         <input type="password" name="password" id="id_password" placeholder="Your password" autocomplete="off" required>
@@ -45,7 +45,7 @@
 
       <p>Forgot password ? <a href="">Reset Password</a></p>
 
-      <p>Don't have account ? <a href="">Sign Up</a></p>
+      <p>Don't have account ? <a href="{% url 'users:signup' %}">Sign Up</a></p>
     </div>
 
   </div>
