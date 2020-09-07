@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block cssblock %}
+  <link rel="stylesheet" href="{% static 'css/users/signup.css' %}">
+{% endblock cssblock %}
+
+{% block title %}
+  SignUp | Djangram
+{% endblock title %}
+
+{% block content %}
+  <div class="signup">
+    <div class="name-brand">
+      <a href="{% url 'core:home' %}" target="_blank" rel="noopener noreferrer">
+        <h1>Djangram</h1>
+      </a>
+    </div>
+
+    <div class="social-login">
+      <a href="#" rel="noopener noreferrer">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" rel="noopener noreferrer">
+        <i class="fab fa-google"></i>
+      </a>
+    </div>
+
+    <p class="tc">
+      Or register new account
+    </p>
+
+    <div class="signup__div">
+      <form id="signup__form" method="post" action="{% url 'users:signup' %}">
+
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <input type="submit" value="Sign Up">
+      </form>
+
+      <p>Have account ? <a href="{% url 'users:login' %}">Login</a></p>
+    </div>
+
+  </div>
+
+  <p class="tc">Get the app</p>
+
+  <div class="get-app">
+    <a href="#" rel="noopener noreferrer">
+      <img alt="Available on the App Store" src="{% static 'img/apple-store.png' %}">
+    </a>
+    <a href="#" rel="noopener noreferrer">
+      <img alt="Available on Google Play" src="{% static 'img/ch-play.png' %}">
+    </a>
+  </div>
+
+{% endblock content %}
