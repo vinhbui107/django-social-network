@@ -184,25 +184,27 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale/"),)
 # EMAIL SETTINGS
 # =============================================================================
 
-# EMAIL_SUBJECT_PREFIX = config("DEFAULT_FROM_EMAIL", default="[Django Bat]")
+EMAIL_SUBJECT_PREFIX = config(
+    "DEFAULT_FROM_EMAIL", default="[Djangram Website]"
+)
 
-# DEFAULT_FROM_EMAIL = config(
-#     "DEFAULT_FROM_EMAIL", default="hocdjango@gmail.com"
-# )
+DEFAULT_FROM_EMAIL = config(
+    "DEFAULT_FROM_EMAIL", default="Djangram <noreply@Djangram.com>"
+)
 
-# EMAIL_BACKEND = config(
-#     "EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
-# )
+EMAIL_BACKEND = config(
+    "EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+)
 
-# EMAIL_HOST = config("EMAIL_HOST", default="localhost")
+EMAIL_HOST = config("EMAIL_HOST", default="smtp.gmail.com")
 
-# EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
+EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
 
-# EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="root")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="djangram2020@gmail.com")
 
-# EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="helloworld2020")
 
-# EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
+EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
 
 
 # =============================================================================
