@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+*,
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 html,
 body,
 div,
@@ -127,14 +133,19 @@ table {
 
 /* END OF HEADER */
 
-/* CONTAINER */
-
-/* END OF CONTAINER */
+/* MAIN */
+main {
+  width: 50%;
+  margin: 0 auto;
+}
+/* END OF MAIN */
 
 /* FOOTER */
-footer {
+footer.site-footer {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
+  max-width: 350px;
 }
 
 .footer-contact {
@@ -166,14 +177,18 @@ footer {
 /* RESPONSIVE */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+  footer.site-footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) {
+  footer.site-footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
