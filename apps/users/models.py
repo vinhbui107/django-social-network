@@ -38,7 +38,7 @@ class CustomUser(AbstractUser):
         verbose_name="email address", max_length=255, unique=True,
     )
     username = models.CharField(max_length=40, unique=True)
-    display_name = models.CharField(max_length=100)
+    display_name = models.CharField(max_length=100, default="")
     date_of_birth = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     phone = models.CharField(max_length=16, blank=True)
@@ -54,4 +54,4 @@ class CustomUser(AbstractUser):
     )
 
     def __str__(self):
-        return self.email
+        return self.username
