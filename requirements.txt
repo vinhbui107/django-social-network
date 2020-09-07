@@ -12,6 +12,7 @@ Django==3.1
 django-allauth==0.42.0
 django-crispy-forms==1.9.2
 django-debug-toolbar==2.2
+django-simple-history==2.11.0
 idna==2.10
 isort==5.4.2
 lazy-object-proxy==1.4.3
