@@ -1,1 +1,31 @@
-<p>this shit doesn't work</p>
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block cssblock %}
+  <link rel="stylesheet" href="{% static 'css/users/activate.css' %}">
+{% endblock cssblock %}
+
+{% block title %}
+  Activate Failed | Instagram
+{% endblock title %}
+
+{% block content %}
+  <div class="activate">
+    <div class="name-brand">
+      <a href="{% url 'core:home' %}" target="_blank" rel="noopener noreferrer">
+        <h1>Djangram</h1>
+      </a>
+    </div>
+
+    <div class="activate-message">
+      <h3>Your token is invalid!</h3>
+      <h3>Confirm Email Failed!</h3>
+      <a href="{% url 'users:signup' %}" class="btn btn-primary">Singup</a>
+    </div>
+  </div>
+
+
+{% endblock content %}
