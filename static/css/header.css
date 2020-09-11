@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+
+/* navbar */
+header {
+  background-color: rgb(255, 255, 255);
+  display: block;
+}
+
+.navbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+/* end of navbar */
+
+/* navbar brand */
+.navbar-brand {
+  font-family: "Kalam", cursive;
+  color: black;
+  font-size: 28px;
+  align-self: center;
+  text-decoration: none;
+}
+/* end of navbar brand */
+
+/* navbar items */
+
+.navbar-list {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-left: 15px;
+}
+
+.dropdown-toggle img {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+}
+
+/* end of navbar items */
+
+/* RESPONSIVE */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  nav {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+  nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  nav {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  nav {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+/* END OF RESPONSIVE */

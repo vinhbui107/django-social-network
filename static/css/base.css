@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
 *,
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: proxima-nova, sans-serif !important;
+  font-style: normal;
+  font-weight: 400;
 }
 
 html,
@@ -88,7 +90,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 80%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -129,66 +131,19 @@ table {
   border-spacing: 0;
 }
 
-/* HEADER */
-
-/* END OF HEADER */
-
 /* MAIN */
 main {
-  width: 50%;
-  margin: 0 auto;
+  background-color: #f2f2f2;
 }
 /* END OF MAIN */
-
-/* FOOTER */
-footer.site-footer {
-  display: flex;
-  margin: 0 auto;
-  flex-direction: column;
-  max-width: 350px;
-}
-
-.footer-contact {
-  text-align: center;
-}
-
-.footer-contact a {
-  text-decoration: none;
-}
-
-.footer-contact img.svg {
-  width: 2em;
-  height: 2em;
-  border-radius: 5px;
-  margin: 10px;
-  filter: invert(50%) sepia(0%) saturate(11%) hue-rotate(137deg) brightness(90%) contrast(90%);
-}
-
-.footer-contact img.svg:hover {
-  filter: invert(10%) sepia(0%) saturate(11%) hue-rotate(137deg) brightness(90%) contrast(90%);
-}
-
-.footer-description {
-  padding-top: 5px;
-  align-self: center;
-}
-/* END OF FOOTER */
 
 /* RESPONSIVE */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  footer.site-footer {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) {
-  footer.site-footer {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
