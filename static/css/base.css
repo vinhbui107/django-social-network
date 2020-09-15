@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
-*,
-body {
-  font-family: proxima-nova, sans-serif !important;
-  font-style: normal;
-  font-weight: 400;
+@font-face {
+  font-family: Billabong;
+  src: url(../vendor/fonts/Billabong-Regular.ttf);
+}
+
+* {
+  font-family: "Open Sans", sans-serif !important;
 }
 
 html,
