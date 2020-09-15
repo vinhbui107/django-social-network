@@ -5,13 +5,18 @@ from django.contrib.auth import get_user_model
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField(
-        label="", widget=forms.TextInput(attrs={"placeholder": "Email"})
+        label="", widget=forms.TextInput(attrs={"placeholder": "Email"}),
     )
     username = forms.CharField(
         label="",
         max_length=80,
         widget=forms.TextInput(
-            attrs={"placeholder": "Username", "autofocus": True}
+            attrs={
+                "placeholder": "Username",
+                "autofocus": True,
+                "pattern": "[A-Za-z0-9]+",
+                "title": "Alphabet in english and number only",
+            }
         ),
     )
     password1 = forms.CharField(
@@ -36,13 +41,24 @@ class SignupForm(UserCreationForm):
         )
         model = get_user_model()
 
+    def clean(self):
+        data = self.cleaned_data
+
+        username = data.get("username")
+        email = data.get("email")
+
+        data["username"] = username.lower()
+        data["email"] = email.lower()
+
+        return data
+
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
         label="",
         max_length=80,
         widget=forms.TextInput(
-            attrs={"placeholder": "Email", "autofocus": True}
+            attrs={"placeholder": "Email or username", "autofocus": True}
         ),
     )
     password = forms.CharField(

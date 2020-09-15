@@ -12,6 +12,7 @@ from apps.users.views import (
 )
 
 from .forms import LoginForm
+from django.conf.urls.static import static
 
 app_name = "users"
 
@@ -67,4 +68,4 @@ urlpatterns = [
         ),
         name="password_reset_done",
     ),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
