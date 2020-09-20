@@ -100,3 +100,6 @@ local_settings.py
 .history.vscode/settings.json
 
 db.sqlite3
+
+
+local_settings.py
