@@ -6,6 +6,8 @@
 
 {% block cssblock %}
   <link rel="stylesheet" href="{% static 'css/users/signup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
 {% endblock cssblock %}
 
 {% block title %}
@@ -34,7 +36,7 @@
     </p>
 
     <div class="signup__div">
-      <form id="signup__form" method="post" action="{% url 'users:signup' %}">
+      <form id="signup__form" name="signup" method="post" action="{% url 'users:signup' %}">
 
         {% csrf_token %}
 
@@ -46,17 +48,6 @@
       <p>Have account ? <a href="{% url 'users:login' %}">Login</a></p>
     </div>
 
-  </div>
-
-  <p class="tc">Get the app</p>
-
-  <div class="get-app">
-    <a href="#" rel="noopener noreferrer">
-      <img alt="Available on the App Store" src="{% static 'img/apple-store.png' %}">
-    </a>
-    <a href="#" rel="noopener noreferrer">
-      <img alt="Available on Google Play" src="{% static 'img/ch-play.png' %}">
-    </a>
   </div>
 
 {% endblock content %}

@@ -6,6 +6,7 @@
 
 {% block cssblock %}
   <link rel="stylesheet" href="{% static 'css/users/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 {% endblock cssblock %}
 
 {% block title %}
@@ -49,16 +50,4 @@
     </div>
 
   </div>
-
-  <p class="tc">Get the app</p>
-
-  <div class="get-app">
-    <a href="#" rel="noopener noreferrer">
-      <img alt="Available on the App Store" src="{% static 'img/apple-store.png' %}">
-    </a>
-    <a href="#" rel="noopener noreferrer">
-      <img alt="Available on Google Play" src="{% static 'img/ch-play.png' %}">
-    </a>
-  </div>
-
 {% endblock content %}

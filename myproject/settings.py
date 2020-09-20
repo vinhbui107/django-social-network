@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import dj_database_url
 from decouple import Csv, config
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -236,3 +237,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # =============================================================================
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES["default"].update(db_from_env)
