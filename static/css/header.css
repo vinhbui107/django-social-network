@@ -1,13 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
-
 /* navbar */
 header {
-  background-color: rgb(255, 255, 255);
-  display: block;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(219, 219, 219);
 }
 
 .navbar {
-  height: 50px;
+  height: 55px;
   display: flex;
   flex-direction: row;
 }
@@ -15,9 +13,9 @@ header {
 
 /* navbar brand */
 .navbar-brand {
-  font-family: "Kalam", cursive;
+  font-family: "Billabong" !important;
   color: black;
-  font-size: 28px;
+  font-size: 32px;
   align-self: center;
   text-decoration: none;
 }
@@ -32,13 +30,14 @@ header {
 }
 
 .navbar-item {
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 .dropdown-toggle img {
   height: 22px;
   width: 22px;
   border-radius: 50%;
+  margin-left: 0px;
 }
 
 /* end of navbar items */
