@@ -11,8 +11,8 @@
       {% block title %} {% endblock title %}
     </title>
 
-    <!-- Import Bootstrap & CSS files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.4/css/all.css">
+    <!-- Import Fontawesome & CSS files -->
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome/fontawesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -24,7 +24,7 @@
       {% block headerblock %} {% endblock headerblock %}
 
       <main>
-      {% block content %} {% endblock content %}
+        {% block content %} {% endblock content %}
       </main>
 
 

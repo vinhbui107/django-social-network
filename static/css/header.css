@@ -2,45 +2,60 @@
 header {
   background-color: rgb(255, 255, 255) !important;
   border: 1px solid rgb(219, 219, 219);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar {
   height: 55px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 /* end of navbar */
 
 /* navbar brand */
-.navbar-brand {
+.navbar-name {
   font-family: "Billabong" !important;
   color: black;
   font-size: 32px;
-  align-self: center;
   text-decoration: none;
+}
+
+.navbar-name:hover {
+  text-decoration: none;
+  color: black;
 }
 /* end of navbar brand */
 
-/* navbar items */
+/* SEARCH */
+input.search-input {
+  width: 215px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 28px;
+}
 
+input.search-input:selection {
+  border: 1px solid gray;
+}
+/* END OF SEARCH */
+
+/* NAVBAR ITEMS */
 .navbar-list {
+  width: 222px;
   display: flex;
-  margin-left: auto;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.navbar-item {
-  margin-left: 20px;
-}
-
-.dropdown-toggle img {
+.dropdown-image img {
   height: 22px;
   width: 22px;
   border-radius: 50%;
-  margin-left: 0px;
 }
-
-/* end of navbar items */
+/* END OF NAVBAR ITEMS */
 
 /* RESPONSIVE */
 /* Extra small devices (phones, 600px and down) */
@@ -49,12 +64,16 @@ header {
     width: 90%;
     margin: 0 auto;
   }
+
+  div.search-box {
+    display: none;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) {
   nav {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -62,16 +81,12 @@ header {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   nav {
-    width: 60%;
+    width: 935px;
     margin: 0 auto;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  nav {
-    width: 50%;
-    margin: 0 auto;
-  }
 }
 /* END OF RESPONSIVE */
