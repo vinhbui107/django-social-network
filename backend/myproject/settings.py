@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import dj_database_url
 from decouple import Csv, config
-import django_heroku
+# import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
