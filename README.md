@@ -1,4 +1,4 @@
-## Django + Istagram => Djangram 🙂
+## Djangram Social Network
 
 ## Features
 
