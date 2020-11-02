@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 
 
 class UserManager(BaseUserManager):
@@ -33,25 +34,32 @@ class UserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser):
-
     email = models.EmailField(
-        verbose_name="email address", max_length=255, unique=True,
+        verbose_name="email address",
+        max_length=255,
+        unique=True,
     )
     username = models.CharField(max_length=40, unique=True)
     display_name = models.CharField(max_length=100, default="")
     date_of_birth = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
-    phone = models.CharField(max_length=16, blank=True)
+    phone = models.CharField(max_length=16, blank=True, null=True)
     photo = models.ImageField(
-        upload_to="user_images/", default="user_images/default.jpeg"
+        upload_to="user_images/", default="user_images/default.jpeg", null=True
     )
+
     following = models.ManyToManyField(
-        "self", related_name="following_users", blank=True, symmetrical=False,
+        "self",
+        related_name="following_users",
+        symmetrical=False,
     )
 
     followers = models.ManyToManyField(
-        "self", related_name="follower_users", blank=True, symmetrical=False,
+        "self",
+        related_name="follower_users",
+        symmetrical=False,
     )
+    objects = UserManager()
 
     def __str__(self):
         return self.username
