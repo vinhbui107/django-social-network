@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import dj_database_url
 from decouple import Csv, config
+
 # import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,16 +34,15 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "crispy_forms",
-    "sorl.thumbnail",
+    # "allauth",
+    # "allauth.account",
+    # "allauth.socialaccount",
+    # "sorl.thumbnail",
+    "rest_framework",
 ]
 
 
 LOCAL_APPS = [
-    "apps.core",
     "apps.users",
     "apps.posts",
 ]
@@ -98,7 +98,9 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates"),],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
